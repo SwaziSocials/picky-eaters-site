@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://pickyeaters.online/">
+<meta property="og:title" content="Picky Eaters · Food kids actually ask for">
+<meta property="og:description" content="A virtual food brand. Coming soon. Join the waitlist.">
+<meta property="og:image" content="https://pickyeaters.online/assets/logo-wink.png">
+<title>Picky Eaters · Food kids actually ask for</title>
+<meta name="description" content="Picky Eaters is a virtual food brand. Our menu, cooked by partner kitchens, delivered through the apps. Coming soon.">
+<link rel="icon" href="assets/logo-wink.png">
+<style>
+  :root{
+    --lime:#d5f749; --green:#091f04; --coral:#fa6442; --cream:#f7f6e8; --cream-2:#efeed9;
+    --ink:#091f04; --muted:#3d4a36; --line:#dcdcc4; --white:#fffef7;
+    --round: ui-rounded, "SF Pro Rounded", "Nunito", "Arial Rounded MT Bold", system-ui, sans-serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --r:22px; --max:1168px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:var(--round);font-weight:800;letter-spacing:-.01em;line-height:1.05;margin:0}
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+
+  .pill{display:inline-block;border:1px solid var(--line);background:var(--white);border-radius:999px;padding:4px 12px;font-size:13px;font-weight:600;color:var(--ink)}
+
+  /* header */
+  header.site{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .brand img{width:42px;height:42px;border-radius:12px}
+  .brand span{font-family:var(--round);font-weight:800;font-size:26px}
+  .brand span i{font-style:normal;color:var(--coral)}
+  nav.main{display:flex;gap:26px;font-weight:600;font-size:16px}
+  nav.main a{text-decoration:none}
+  nav.main a:hover{text-decoration:underline;text-underline-offset:4px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 24px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:var(--sans)}
+.short{display:none}
+  .brand span{white-space:nowrap}
+  .btn{white-space:nowrap}
+  .btn-dark{background:var(--green);color:var(--lime)}
+  .btn-lime{background:var(--lime);color:var(--green)}
+  .btn-ghost{border-color:currentColor;color:inherit;background:transparent}
+  .btn-coral{background:var(--coral);color:var(--white)}
+
+  /* placeholder label */
+  .ph{position:relative;overflow:hidden}
+  .ph img{width:100%;height:100%;object-fit:cover}
+  .ph-tag{position:absolute;left:12px;top:12px;z-index:3;background:rgba(9,31,4,.82);color:var(--lime);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border-radius:8px}
+
+  /* hero */
+  .hero{padding:24px 0 8px}
+  .hero-grid{display:grid;grid-template-columns:2fr 1fr;gap:14px}
+  .hero-main{border-radius:var(--r);min-height:540px;background:var(--lime)}
+  .hero-main::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,31,4,.92) 0%,rgba(9,31,4,.78) 42%,rgba(9,31,4,.15) 75%,rgba(9,31,4,0) 100%);z-index:1}
+  .hero-main img{position:absolute;inset:0}
+  .hero-copy{position:relative;z-index:2;padding:56px 44px;max-width:600px;color:var(--white)}
+  .hero-copy .eyebrow{color:var(--lime)}
+  .hero-copy h1{font-size:68px;margin:14px 0 18px}
+  .hero-copy h1 em{font-style:normal;color:var(--lime)}
+  .hero-copy p{font-size:19px;margin:0 0 26px;color:#eef3e4}
+  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .sticker{position:absolute;z-index:3;right:30px;top:30px;width:116px;height:116px;border-radius:50%;background:var(--coral);color:var(--white);display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--round);font-weight:800;font-size:19px;line-height:1.05;transform:rotate(10deg);box-shadow:0 6px 0 rgba(9,31,4,.25)}
+  .hero-side{display:grid;grid-template-rows:1fr 1fr;gap:14px}
+  .side-card{border-radius:var(--r);min-height:260px}
+  .side-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(9,31,4,.86) 0%,rgba(9,31,4,.1) 62%);z-index:1}
+  .side-card img{position:absolute;inset:0}
+  .side-card .cap{position:absolute;z-index:2;left:22px;right:22px;bottom:20px;color:var(--white)}
+  .side-card .cap .eyebrow{color:var(--lime);font-size:12px}
+  .side-card .cap h3{font-size:25px;margin-top:6px}
+  .side-card .soon{position:absolute;z-index:3;right:12px;top:12px;background:var(--coral);color:var(--white);font-size:12px;font-weight:800;padding:5px 10px;border-radius:999px}
+
+  .points{display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:16px;padding:20px 0 26px;border-bottom:1px solid var(--line);font-size:15px;font-weight:600;color:var(--muted)}
+  .points span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--coral);margin-right:9px;vertical-align:middle}
+
+  /* mission */
+  .mission{padding:80px 0;text-align:center}
+  .mission .eyebrow{color:var(--coral)}
+  .mission h2{font-size:52px;max-width:880px;margin:16px auto 0}
+  .mission h2 mark{background:linear-gradient(transparent 58%,var(--lime) 58%);color:inherit;padding:0 4px}
+
+  section{scroll-margin-top:90px}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:30px;flex-wrap:wrap}
+  .sec-head .eyebrow{color:var(--muted)}
+  .sec-head h2{font-size:52px;margin-top:10px}
+  .sec-head p{max-width:440px;margin:0;color:var(--muted)}
+
+  /* concept */
+  .concept{background:var(--lime);padding:84px 0}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .step{background:var(--white);border:2px solid var(--green);border-radius:var(--r);padding:28px 26px 30px;box-shadow:6px 6px 0 var(--green)}
+  .step .num{width:46px;height:46px;border-radius:50%;background:var(--green);color:var(--lime);display:flex;align-items:center;justify-content:center;font-family:var(--round);font-weight:800;font-size:22px;margin-bottom:18px}
+  .step h3{font-size:26px;margin-bottom:10px}
+  .step p{margin:0;color:var(--muted)}
+  .concept .note{margin:28px 0 0;font-weight:600}
+
+  /* menu */
+  .menu{padding:90px 0}
+  .menu-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+  .dish{grid-column:span 2;background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+  .dish.wide{grid-column:span 3}
+  .dish .ph{aspect-ratio:4/3;background:var(--cream-2)}
+  .dish.wide .ph{aspect-ratio:16/9}
+  .dish .body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .badge{align-self:flex-start;background:var(--coral);color:var(--white);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+  .dish h3{font-size:26px}
+  .dish p{margin:0;color:var(--muted)}
+  .pattern{position:absolute;inset:0;background-color:var(--lime);background-image:url("assets/logo-wink.png");background-size:92px;background-repeat:repeat;opacity:1}
+  .pattern.green{background-color:var(--green)}
+  .pattern-label{position:absolute;inset:auto 0 0 0;z-index:2;background:rgba(9,31,4,.86);color:var(--lime);font-size:14px;font-weight:700;padding:10px 14px}
+  .drinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+  .drink{flex:1;min-width:150px;background:var(--cream);border-radius:14px;padding:12px 14px}
+  .drink b{font-family:var(--round);font-size:20px;display:block}
+  .drink span{font-size:15px;color:var(--muted)}
+  .menu .foot{margin-top:24px;color:var(--muted);font-size:15px}
+
+  /* partners */
+  .partners{background:var(--green);color:var(--white);padding:90px 0}
+  .partners .sec-head .eyebrow{color:var(--lime)}
+  .partners .sec-head p{color:#cfdcc6}
+  .partners h2 em{font-style:normal;color:var(--lime)}
+  .p-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+  .p-card{border:1.5px solid rgba(213,247,73,.35);border-radius:var(--r);padding:28px 26px}
+  .p-card h3{font-size:24px;color:var(--lime);margin-bottom:14px}
+  .p-card ul{margin:0;padding:0;list-style:none}
+  .p-card li{padding:9px 0;border-top:1px solid rgba(255,255,255,.12);color:#eef3e4}
+  .p-card li:first-child{border-top:0}
+  .p-cta{margin-top:30px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:var(--lime);color:var(--green);border-radius:var(--r);padding:26px 28px}
+  .p-cta p{margin:0;flex:1;min-width:260px;font-weight:600;font-size:18px}
+
+  /* waitlist */
+  .join{padding:90px 0}
+  .join-box{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;background:var(--white);border:2px solid var(--green);border-radius:28px;padding:44px;box-shadow:8px 8px 0 var(--green)}
+  .join-box h2{font-size:48px;margin:10px 0 16px}
+  .join-box .eyebrow{color:var(--coral)}
+  .join-box p{color:var(--muted);margin:0 0 14px}
+  form{display:grid;gap:14px}
+  label{font-weight:700;font-size:15px;display:grid;gap:6px}
+  input,select,textarea{font:inherit;font-weight:400;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--cream);color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:3px solid var(--lime);border-color:var(--green)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .staged{font-size:13px;color:var(--muted);background:var(--cream-2);border-radius:10px;padding:10px 12px}
+  #formMsg{display:none;font-weight:700;color:var(--green);background:var(--lime);border-radius:10px;padding:10px 12px}
+
+  footer{background:var(--green);color:#cfdcc6;padding:40px 0;font-size:15px}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  footer .brand span{color:var(--white)}
+  footer .tag{font-family:var(--round);font-weight:800;color:var(--lime);font-size:20px}
+
+  @media (max-width: 960px){
+    .points{grid-template-columns:1fr 1fr}
+    nav.main{display:none}
+    .hero-grid{grid-template-columns:1fr}
+    .hero-side{grid-template-columns:1fr 1fr;grid-template-rows:none}
+    .hero-copy h1{font-size:54px}
+    .steps,.p-grid{grid-template-columns:1fr}
+    .menu-grid{grid-template-columns:1fr 1fr}
+    .dish,.dish.wide{grid-column:span 1}
+    .dish.wide:last-child{grid-column:span 2}
+    .join-box{grid-template-columns:1fr}
+  }
+  @media (max-width: 620px){
+    body{font-size:16px}
+    .wrap{padding:0 18px}
+    header.site .wrap{height:66px}
+    .brand span{font-size:22px}
+    .brand img{width:36px;height:36px}
+    header.site .btn{padding:10px 16px;font-size:15px}
+    .hero-main{min-height:560px}
+    .hero-main::after{background:linear-gradient(0deg,rgba(9,31,4,.95) 0%,rgba(9,31,4,.82) 55%,rgba(9,31,4,.25) 100%)}
+    .hero-copy{padding:150px 24px 64px}
+    header .long{display:none}
+    header .short{display:inline}
+    .hero-copy h1{font-size:44px}
+    .hero-copy p{font-size:17px}
+    .sticker{width:92px;height:92px;font-size:15px;right:18px;top:18px}
+    .hero-side{grid-template-columns:1fr}
+    .side-card{min-height:220px}
+    .points{grid-template-columns:1fr;gap:8px}
+    .mission{padding:56px 0}
+    .mission h2{font-size:34px}
+    .sec-head h2{font-size:38px}
+    .concept,.menu,.partners,.join{padding:60px 0}
+    .menu-grid{grid-template-columns:1fr}
+    .dish.wide:last-child{grid-column:span 1}
+    .join-box{padding:26px 20px;box-shadow:5px 5px 0 var(--green)}
+    .join-box h2{font-size:36px}
+    .row2{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Picky Eaters home">
+      <img src="assets/logo-wink.png" alt="Picky Eaters logo, The Wink: a smiling, winking fork">
+      <span>Picky Eaters<i>.</i></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#menu">Menu</a>
+      <a href="#drinks">Drinks</a>
+      <a href="#kitchens">Kitchen partners</a>
+    </nav>
+    <a class="btn btn-dark" href="#join"><span class="long">Join the waitlist</span><span class="short">Waitlist</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-main ph">
+          <span class="ph-tag" style="left:auto;right:16px;top:auto;bottom:16px">Placeholder photo</span>
+          <img style="object-position:85% 50%" src="assets/placeholder-1.jpg" alt="Placeholder photo: a plate of rice, vegetables and sliced meat on a lime background. Not a Picky Eaters dish.">
+          <div class="sticker">Starter<br>menu<br>coming</div>
+          <div class="hero-copy">
+            <div class="eyebrow">A virtual food brand · Coming soon</div>
+            <h1>Food kids actually <em>ask for.</em></h1>
+            <p>Picky Eaters is a delivery-first food brand. We create the menu. Partner restaurant kitchens cook it. Delivery apps bring it to your door.</p>
+            <div class="hero-ctas">
+              <a class="btn btn-lime" href="#join">Join the waitlist</a>
+              <a class="btn btn-ghost" href="#menu">See what's coming</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-side">
+          <a class="side-card ph" href="#menu" style="text-decoration:none">
+            <span class="ph-tag">Placeholder photo</span>
+            <span class="soon">Coming soon</span>
+            <img src="assets/placeholder-4.jpg" alt="Placeholder photo: a divided kids' plate with star shapes, macaroni, vegetables and fruit.">
+            <div class="cap"><div class="eyebrow">Kids' plate</div><h3>Smaller portions, mild flavors, foods kept separate</h3></div>
+          </a>
+          <a class="side-card ph" href="#menu" style="text-decoration:none">
+            <span class="ph-tag">Placeholder photo</span>
+            <span class="soon">Coming soon</span>
+            <img src="assets/placeholder-2.jpg" alt="Placeholder photo: five meal prep containers on a lime background.">
+            <div class="cap"><div class="eyebrow">Personal meal prep</div><h3>Your week of Picky Eaters, packed and labeled</h3></div>
+          </a>
+        </div>
+      </div>
+      <div class="points">
+        <span>Our brand, our menu, our recipes</span>
+        <span>Cooked by partner restaurant kitchens</span>
+        <span>Delivered through the apps</span>
+        <span>Liver and heart always named on the menu</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission" aria-labelledby="mission-h">
+    <div class="wrap">
+      <div class="eyebrow">Our mission</div>
+      <h2 id="mission-h">Make nutrition accessible to <mark>every kind of eater.</mark></h2>
+    </div>
+  </section>
+
+  <section class="concept" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">How it works</div><h2 id="how-h">A food brand without<br>a storefront.</h2></div>
+        <p>Picky Eaters is a virtual food brand. There is no Picky Eaters dining room. The food comes from kitchens we partner with, and it comes to you.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>We build the menu</h3>
+          <p>Picky Eaters creates and owns the brand, the menu, the recipes and the way every plate is put together.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>A partner kitchen cooks it</h3>
+          <p>Restaurant kitchens we work with cook the Picky Eaters menu to our recipes, right alongside their own.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>The apps bring it home</h3>
+          <p>You order Picky Eaters through delivery apps, and they handle the last mile to your door.</p>
+        </div>
+      </div>
+      <p class="note">We are not taking orders yet. Join the waitlist to hear first when we open.</p>
+    </div>
+  </section>
+
+  <section class="menu" id="menu" aria-labelledby="menu-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">The starter menu</div><h2 id="menu-h">What's coming</h2></div>
+        <p>These are menu concepts we are developing with our kitchen partners. Names, plates and photos may change before launch.</p>
+      </div>
+      <div class="menu-grid">
+        <article class="dish wide">
+          <div class="ph">
+            <div class="pattern green"></div>
+            <div class="pattern-label">Photo coming after the cook session</div>
+          </div>
+          <div class="body">
+            <span class="badge">Coming soon</span>
+            <h3>House beef organ sausage plates</h3>
+            <p>Our house beef sausage, made with liver and heart, served as a familiar, full plate. The heart of the Picky Eaters menu.</p>
+          </div>
+        </article>
+        <article class="dish wide">
+          <div class="ph">
+            <span class="ph-tag">Placeholder photo</span>
+            <img src="assets/placeholder-4.jpg" alt="Placeholder photo: a divided kids' plate.">
+          </div>
+          <div class="body">
+            <span class="badge">Coming soon</span>
+            <h3>Kids' plate</h3>
+            <p>Smaller portions, mild flavors and foods kept separate on the plate, the way a lot of kids like it.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="ph">
+            <span class="ph-tag">Placeholder photo</span>
+            <img style="object-position:100% 40%" src="assets/placeholder-3.jpg" alt="Placeholder photo: a table of shared dishes including a smooth mash.">
+          </div>
+          <div class="body">
+            <span class="badge">Coming soon</span>
+            <h3>Soft and smooth plate</h3>
+            <p>Softer, smoother textures for eaters who like their food that way.</p>
+          </div>
+        </article>
+        <article class="dish">
+          <div class="ph">
+            <span class="ph-tag">Placeholder photo</span>
+            <img src="assets/placeholder-2.jpg" alt="Placeholder photo: meal prep containers.">
+          </div>
+          <div class="body">
+            <span class="badge">Coming soon</span>
+            <h3>Personal meal prep</h3>
+            <p>A set of Picky Eaters meals for your week, packed and labeled for you.</p>
+          </div>
+        </article>
+        <article class="dish" id="drinks">
+          <div class="ph">
+            <div class="pattern"></div>
+            <div class="pattern-label">Bottle photos coming soon</div>
+          </div>
+          <div class="body">
+            <span class="badge">Coming soon</span>
+            <h3>Wata Stak + Bita Juce</h3>
+            <p>Two house drinks, made by the batch. Recipes in testing.</p>
+            <div class="drinks">
+              <div class="drink"><b>Wata Stak</b><span>The stacked water. Cold, clean, a touch of honey.</span></div>
+              <div class="drink"><b>Bita Juce</b><span>The bold one. Ginger, turmeric, lemon and honey.</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="foot">Every menu item above is a concept and not available to order yet.</p>
+    </div>
+  </section>
+
+  <section class="partners" id="kitchens" aria-labelledby="kitchens-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">Kitchen partners</div><h2 id="kitchens-h">Cook Picky Eaters<br><em>in your kitchen.</em></h2></div>
+        <p>We are looking for restaurant kitchens to collaborate with. If your kitchen has room for one more menu, let's taste together.</p>
+      </div>
+      <div class="p-grid">
+        <div class="p-card">
+          <h3>What we bring</h3>
+          <ul>
+            <li>A ready brand people remember</li>
+            <li>The menu and recipe specs</li>
+            <li>Packaging and menu design</li>
+            <li>Marketing and the customer relationship</li>
+          </ul>
+        </div>
+        <div class="p-card">
+          <h3>What you bring</h3>
+          <ul>
+            <li>A working restaurant kitchen</li>
+            <li>A team that loves to cook</li>
+            <li>Room for delivery orders</li>
+            <li>Care for every plate that leaves</li>
+          </ul>
+        </div>
+        <div class="p-card">
+          <h3>How we start</h3>
+          <ul>
+            <li>1. A tasting at your place</li>
+            <li>2. A cook session on the starter menu</li>
+            <li>3. A written collaboration agreement</li>
+            <li>4. Then, and only then, launch</li>
+          </ul>
+        </div>
+      </div>
+      <div class="p-cta">
+        <p>Run a restaurant kitchen? Tell us about it and we'll set up a tasting.</p>
+        <a class="btn btn-dark" href="#join" data-role="kitchen">Start a kitchen conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="join" id="join" aria-labelledby="join-h">
+    <div class="wrap">
+      <div class="join-box">
+        <div>
+          <div class="eyebrow">Waitlist + contact</div>
+          <h2 id="join-h">Be first at the table.</h2>
+          <p>Join the waitlist to hear when Picky Eaters opens for delivery and when the starter menu is ready.</p>
+          <p>Kitchens and collaborators: use the same form and pick "I run a kitchen" or "Something else."</p>
+        </div>
+        <form id="joinForm" novalidate>
+          <div class="row2">
+            <label>Your name<input name="name" autocomplete="name" required></label>
+            <label>Email<input name="email" type="email" autocomplete="email" required></label>
+          </div>
+          <label>I am...
+            <select name="role" id="role">
+              <option value="family">A family who wants to order</option>
+              <option value="eater">A picky eater myself</option>
+              <option value="kitchen">I run a kitchen</option>
+              <option value="other">Something else</option>
+            </select>
+          </label>
+          <label>Anything you'd like us to know (optional)<textarea name="note" rows="3"></textarea></label>
+          <button class="btn btn-coral" type="submit">Join the waitlist</button>
+          <div id="formMsg" role="status">Your email app should open with your note ready. Press send there to join. If it did not open, email us at <a href="mailto:help@swazisocials.com?subject=Picky%20Eaters%20waitlist">help@swazisocials.com</a>.</div>
+          <div class="staged">This form opens your email app with a message to help@swazisocials.com. We use it only to reply to you about Picky Eaters.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/logo-wink.png" alt=""><span>Picky Eaters<i>.</i></span></a>
+    <span class="tag">Food kids actually ask for.</span>
+    <span>© 2026 Picky Eaters</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-role="kitchen"]').forEach(function(a){
+    a.addEventListener('click',function(){ document.getElementById('role').value='kitchen'; });
+  });
+  document.getElementById('joinForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target.elements, roleSel=f.role;
+    if(!f.name.value.trim()||!f.email.checkValidity()||!f.email.value.trim()){ e.target.reportValidity(); return; }
+    var roleText=roleSel.options[roleSel.selectedIndex].text;
+    var subject=(roleSel.value==='kitchen'?'Picky Eaters kitchen conversation':'Picky Eaters waitlist')+': '+f.name.value.trim();
+    var body='Name: '+f.name.value.trim()+'\nEmail: '+f.email.value.trim()+'\nI am: '+roleText+'\n\n'+f.note.value.trim();
+    window.location.href='mailto:help@swazisocials.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    document.getElementById('formMsg').style.display='block';
+  });
+</script>
+</body>
+</html>
